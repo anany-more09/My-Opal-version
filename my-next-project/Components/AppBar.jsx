@@ -1,4 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+// Reusable component for animated list items
+const AnimatedListItem = ({ children, delay }) => {
+  return (
+    <motion.li
+      className="text-gray-500 hover:text-gray-800 cursor-pointer text-sm"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, delay: delay }}
+    >
+      {children}
+    </motion.li>
+  );
+};
 
 export default function AppBar() {
   return (
@@ -40,9 +55,9 @@ export default function AppBar() {
             <div className="mb-8 md:mb-0">
               <h4 className="font-semibold hover:text-gray-400 cursor-pointer">Products</h4>
               <ul className="mt-2 space-y-3 md:space-y-1">
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">Tadpole</li>
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">C1</li>
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">Composer</li>
+                <AnimatedListItem delay={0.2}>Tadpole</AnimatedListItem>
+                <AnimatedListItem delay={0.3}>C1</AnimatedListItem>
+                <AnimatedListItem delay={0.4}>Composer</AnimatedListItem>
               </ul>
             </div>
             
@@ -50,9 +65,9 @@ export default function AppBar() {
             <div className="mb-8 md:mb-0">
               <h4 className="font-semibold hover:text-gray-400 cursor-pointer">Company</h4>
               <ul className="mt-2 space-y-3 md:space-y-1">
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">About</li>
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">Terms</li>
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">Privacy</li>
+                <AnimatedListItem delay={0.5}>About</AnimatedListItem>
+                <AnimatedListItem delay={0.6}>Terms</AnimatedListItem>
+                <AnimatedListItem delay={0.7}>Privacy</AnimatedListItem>
               </ul>
             </div>
             
@@ -60,10 +75,10 @@ export default function AppBar() {
             <div className="mb-8 md:mb-0">
               <h4 className="font-semibold hover:text-gray-400 cursor-pointer">Resources</h4>
               <ul className="mt-2 space-y-3 md:space-y-1">
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">Support</li>
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">Media Kit</li>
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">Downloads</li>
-                <li className="text-gray-500 hover:text-gray-400 cursor-pointer text-sm">Newsletter</li>
+                <AnimatedListItem delay={0.8}>Support</AnimatedListItem>
+                <AnimatedListItem delay={0.9}>Media Kit</AnimatedListItem>
+                <AnimatedListItem delay={1}>Downloads</AnimatedListItem>
+                <AnimatedListItem delay={1.1}>Newsletter</AnimatedListItem>
               </ul>
             </div>
           </div>
